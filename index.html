@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN Card</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <h3  class="txt1">PAN Card:</h3>
+                <input class="input" id="pancard" placeholder="ATUER9417E">
+            </div><br>
+            
+            <div class="row">
+                <button onclick="check()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function check() {
+            let pancard = document.getElementById("pancard").value;
+            let pan_pattern = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+            if (!pan_pattern.test(pancard) || pancard.length != 10) {
+                alert("Invalid PAN Number");
+            } else {
+                alert("Valid PAN Number");
+            }
+        }
+    </script>
+</body>
+</html>
